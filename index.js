@@ -57,7 +57,7 @@ Toolkit.run(async tools => {
       core.info(`version is ${version}`);
       
       // push new version and tag
-      await exec('git', ['push', 'origin', `HEAD:${inputBranch}`, '--tags'])
+      await exec('git', ['push', 'origin', `HEAD:${inputBranch}`, '-f', '--tags'])
 
       // set output version
       core.setOutput('version', version);

@@ -31,10 +31,7 @@ Toolkit.run(async tools => {
       let commitMessage = message.replace(defaultStrategy, '');
 
       if (skipChecks) {
-        commitMessage = `${commitMessage} 
-        
-        
-        skip-checks: true`
+        commitMessage = `${commitMessage}\n\nskip-checks: true`
       }
 
       tools.log(`Latest commit message: ${commitMessage}`);

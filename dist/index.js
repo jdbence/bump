@@ -2203,13 +2203,13 @@ Toolkit.run(async tools => {
 
       // version by strategy
       
-      await exec('npm', ['version', strategy, '--no-commit-hooks', '-m', `[ci skip] ${commitMessage} %s`]);
+      await exec('npm', ['version', strategy, '--no-commit-hooks', '-m', `[skip ci] ${commitMessage} %s`]);
 
       const version = tools.getPackageJSON().version;
       core.info(`version is ${version}`);
       
       // push new version and tag
-      await exec('git', ['push', 'origin', `HEAD:${inputBranch}`, '-f', '--tags'])
+      await exec('git', ['push', 'origin', `HEAD:${inputBranch}`, '--tags'])
 
       // set output version
       core.setOutput('version', version);

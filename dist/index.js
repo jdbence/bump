@@ -2183,7 +2183,7 @@ Toolkit.run(async tools => {
       let commitMessage = message.replace(defaultStrategy, '');
 
       if (skipChecks) {
-        commitMessage = `${commitMessage} [ci skip]`
+        commitMessage = `${commitMessage}`
       }
 
       tools.log(`Latest commit message: ${commitMessage}`);
@@ -2203,7 +2203,7 @@ Toolkit.run(async tools => {
 
       // version by strategy
       
-      await exec('npm', ['version', strategy, '--no-commit-hooks', '-m', `"%s ${commitMessage}`]);
+      await exec('npm', ['version', strategy, '--no-commit-hooks', '-m', `[ci skip] ${commitMessage} %s`]);
 
       const version = tools.getPackageJSON().version;
       core.info(`version is ${version}`);

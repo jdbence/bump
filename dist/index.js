@@ -2198,6 +2198,7 @@ Toolkit.run(async tools => {
 
       await exec('git', ['config', '--local', 'user.name', userName]);
       await exec('git', ['config', '--local', 'user.email', userEmail]);
+      await exec('git', ['config', '--local', 'pull.rebase', true]);
       await exec('git', pullArgs);
 
       // version by strategy

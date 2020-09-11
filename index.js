@@ -45,8 +45,8 @@ Toolkit.run(async tools => {
         pullArgs.push('--allow-unrelated-histories');
       }
 
-      await exec('git', ['config', '--local', 'user', userName]);
-      await exec('git', ['config', '--local', 'token', token]);
+      await exec('git', ['config', '--local', 'user.name', userName]);
+      await exec('git', ['config', '--local', 'user.token', token]);
       // await exec('git', ['config', '--local', 'user.name', userName]);
       // await exec('git', ['config', '--local', 'user.email', userEmail]);
       await exec('git', ['config', '--local', 'pull.rebase', true]);

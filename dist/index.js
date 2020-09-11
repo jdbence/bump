@@ -2187,6 +2187,7 @@ Toolkit.run(async tools => {
         commitMessage = `${commitMessage}`
       }
 
+      tools.log(`aa: ${JSON.stringify(tools.context.repo)}`)
       tools.log(`Latest commit message: ${commitMessage}`);
       tools.log(`Running with ${userName} ${userEmail} and bumping strategy ${strategy}`);
       tools.log(`Branch is ${inputBranch}`);
